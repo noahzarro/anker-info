@@ -18,12 +18,13 @@ class Promotion(Enum):
     NONE = "None"
     OTHER = "Anker Aktion, aber nöd halbe Priis"
 
-def weeklyRoutine():
+def weeklyRoutine(withAnnouncement=True):
     print("Running weekly routine")
     promotion = getPromotion()
     ankerData = getAnkerData()
     payload = buildPromotionPayload(promotion, ankerData)
-    announcePromotion(payload, ankerData)
+    if withAnnouncement:
+        announcePromotion(payload, ankerData)
     with open("payload.json", "w") as file:
         json.dump(payload, file)
 
@@ -86,6 +87,7 @@ def offerPromotion():
 
 
 def main():
+    weeklyRoutine(withAnnouncement=False)
     schedule.every().monday.at("08:00", "Europe/Zurich").do(weeklyRoutine)
     threading.Thread(target=scheduler).start()
     app.run(debug=True, port=5000, host='0.0.0.0', use_reloader=False)
