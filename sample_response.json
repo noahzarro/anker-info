@@ -1,0 +1,232 @@
+{
+    "activeDcPromotions": [],
+    "assortmentHitPromotion": false,
+    "availabilityUnknown": false,
+    "available": true,
+    "averageRating": 4.5,
+    "baseCapacity": "100",
+    "basePrice": {
+      "currencyIso": "CHF",
+      "formattedValue": "2.50",
+      "value": 2.5
+    },
+    "basePriceUnit": "cl",
+    "basePriceUnitCode": "CLT",
+    "basePriceUnitName": "Centiliter",
+    "beefCornerProduct": false,
+    "categoryPathForTracking": "lebensmittel/getraenke/bier/multipacks-ab-12x50cl",
+    "catering": false,
+    "cateringFondue": false,
+    "cateringVariantProduct": false,
+    "code": "3458809",
+    "conditionalPromotionCodes": [
+      "3312389"
+    ],
+    "content": "1200",
+    "contentUnit": "cl",
+    "contentUnitCode": "CLT",
+    "deliveryRestrictionMessages": [],
+    "deliveryRestrictionMessagesActive": [],
+    "description": "Anker is a slightly bitter lager produced in Switzerland and has a balanced, bittersweet flavour. The art of brewing.ABV: 4.8%IBU: 18EBC: 6OG: 8.6°",
+    "ean": "7612900011531",
+    "fishOrigin": "",
+    "flags": [],
+    "fsc": false,
+    "ghsSymbols": [],
+    "glutenFree": false,
+    "guaranteedFresh": 30,
+    "has360Image": false,
+    "hasShopInShopConfig": false,
+    "hasSimilarProducts": false,
+    "highQualityBeverage": false,
+    "images": [
+      {
+        "format": "productImage-supermarket-SM",
+        "url": "https://www.coop.ch/img/produkte/737_737/RGB/3458809_001.jpg?_=1703249613940",
+        "usedFor": "medium"
+      },
+      {
+        "format": "productImage-supermarket-SM2x",
+        "url": "https://www.coop.ch/img/produkte/1474_1474/RGB/3458809_001.jpg?_=1703249615064",
+        "usedFor": "large"
+      },
+      {
+        "format": "productImage-mondovino-SM",
+        "url": "https://www.coop.ch/img/produkte/737_737/RGB/3458809_001.jpg?_=1703249613940",
+        "usedFor": "unkown"
+      },
+      {
+        "format": "productImage-mondovino-SM2x",
+        "url": "https://www.coop.ch/img/produkte/1474_1474/RGB/3458809_001.jpg?_=1703249615064",
+        "usedFor": "unkown"
+      },
+      {
+        "format": "productImage-delicounter-SM",
+        "url": "https://www.coop.ch/img/produkte/737_737/RGB/3458809_001.jpg?_=1703249613940",
+        "usedFor": "unkown"
+      },
+      {
+        "format": "productImage-delicounter-SM2x",
+        "url": "https://www.coop.ch/img/produkte/1474_1474/RGB/3458809_001.jpg?_=1703249615064",
+        "usedFor": "unkown"
+      }
+    ],
+    "ingredientOrigins": [],
+    "ingredients": "Wasser, <b>GERSTENMALZ</b>, Hopfen.",
+    "ingredientsContainAllergens": true,
+    "isPetShopProduct": false,
+    "isRetailOnlyProduct": false,
+    "itemLongDescription": "Anker is a slightly bitter lager produced in Switzerland and has a balanced, bittersweet flavour. The art of brewing.ABV: 4.8%IBU: 18EBC: 6OG: 8.6°",
+    "labels": [],
+    "lactoseFree": false,
+    "legacy": false,
+    "longerDeliveryTime": false,
+    "matchingWeNeedCategoryId": 7,
+    "maxQuantity": -1.0,
+    "meatPlaceOfBirth": [],
+    "meatPlaceOfRearing": [],
+    "meatPlaceOfSlaughter": [],
+    "megaStorePromotion": false,
+    "microbialRennet": false,
+    "miscellaneous": [],
+    "mondovinoClubOfferBadge": false,
+    "msc": false,
+    "multipackActive": false,
+    "mustBeCooled": false,
+    "mustBeRefrigerated": false,
+    "name": "Anker Lager Beer 24x50cl",
+    "netCapacity": "1200",
+    "nonFood": false,
+    "notPurchasableInApp": false,
+    "numberOfRatings": 101,
+    "numberOfReviews": 78,
+    "nutritionInformation": {
+      "nutritionInformationPerUnit": {
+        "description": "100ml",
+        "nutrients": [
+          {
+            "assembledValue": "ca. 157",
+            "bigSevenNutrient": true,
+            "indented": false,
+            "name": "Energy in kJ"
+          },
+          {
+            "assembledValue": "ca. 38",
+            "bigSevenNutrient": true,
+            "indented": false,
+            "name": "Energy in kcal"
+          },
+          {
+            "assembledValue": "ca. 0g",
+            "bigSevenNutrient": true,
+            "indented": false,
+            "name": "Fat"
+          },
+          {
+            "assembledValue": "ca. 0g",
+            "bigSevenNutrient": true,
+            "indented": true,
+            "name": "saturated fatty acids"
+          },
+          {
+            "assembledValue": "ca. 2.5g",
+            "bigSevenNutrient": true,
+            "indented": false,
+            "name": "Carbohydrate"
+          },
+          {
+            "assembledValue": "ca. 0.5g",
+            "bigSevenNutrient": true,
+            "indented": true,
+            "name": "of which sugars"
+          },
+          {
+            "assembledValue": "ca. 0.5g",
+            "bigSevenNutrient": true,
+            "indented": false,
+            "name": "Protein"
+          },
+          {
+            "assembledValue": "ca. 0g",
+            "bigSevenNutrient": true,
+            "indented": false,
+            "name": "Salt"
+          }
+        ]
+      }
+    },
+    "onlyOnlinePromotion": false,
+    "originCountries": [
+      "Switzerland"
+    ],
+    "originRawMaterials": [],
+    "originText": "Anker",
+    "packagingCountries": [],
+    "partOfAssortmentHitPromotion": true,
+    "percentageOfAlcoholByVolume": 4.8,
+    "petFoodConstituents": [],
+    "preperationInformations": [],
+    "price": {
+      "currencyIso": "CHF",
+      "formattedValue": "29.95",
+      "value": 29.95
+    },
+    "priceHit": false,
+    "primaryCategory": {
+      "id": "m_2019",
+      "name": "Multipacks more than 12x50cl"
+    },
+    "productType": "SUPERMARKET",
+    "promotionAlertActive": false,
+    "promotionAlertPossible": true,
+    "purchasable": true,
+    "quantityChangeable": true,
+    "quantityInCart": 0,
+    "reasonNotAvailable": "NONE",
+    "regionalProduct": false,
+    "regulatedProductName": "Bier",
+    "reviewsAllowed": true,
+    "safetyNotes": [],
+    "salesUnit": "PCE",
+    "selectedForPromotionAlert": false,
+    "selectedPromotion": {
+      "text": "20% off CHF20+"
+    },
+    "showTrophyMessage": false,
+    "stock": {
+      "stockLevel": 352,
+      "stockLevelStatus": "inStock"
+    },
+    "subscriptionProduct": false,
+    "supplier": [
+      {
+        "name": "Contact Name",
+        "type": "contactName",
+        "value": "Coop"
+      },
+      {
+        "name": "Address",
+        "type": "contactAddress",
+        "value": "Postfach 2550, CH-4002 Basel"
+      },
+      {
+        "name": "Phone",
+        "type": "contactPhone",
+        "value": "0848 888 444"
+      },
+      {
+        "name": "Website",
+        "type": "contactEmail",
+        "value": "www.coop.ch"
+      }
+    ],
+    "tileTypeApp": "supermarket",
+    "title": "Anker Lager Beer 24x50cl",
+    "titleForTracking": "Anker Lager Bier 24x50cl",
+    "topup": false,
+    "vegan": false,
+    "vegetarian": false,
+    "weekPromotion": false,
+    "weekendPromotion": false,
+    "wine": false
+  }
