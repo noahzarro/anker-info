@@ -1,10 +1,10 @@
 # Anker Info
 Checks if Anker is on sale
 
-Checks are performed each Monday at 10:00. The most recent data is available shortly afterwards.
+Checks are performed each Monday at 08:00. The most recent data is available shortly afterwards.
 
 ### Polling
-Visit [https://anker.uzwil-to-tokyo.ch/api/promotion] for the newest promotion data. The data is formatted as described [here](#payload)
+Visit https://anker.uzwil-to-tokyo.ch/api/promotion for the newest promotion data. The data is formatted as described [here](#payload)
 
 ### Webhooks
 If you URL is listed in the Webhooks data on [https://github.com/noahzarro/anker-data/tree/main](), then you receive a POST request every time the new promotions are loaded. It has a payload like described [here](#payload)
@@ -15,7 +15,7 @@ If you URL is listed in the Webhooks data on [https://github.com/noahzarro/anker
 {
     "hasPromotion": true,
     "isHalfPrice": true,
-    "promotionString": "50% ab jetzt" // optional
+    "promotionString": "50% ab jetzt" // (string or null)
 }
 ```
 
@@ -31,4 +31,4 @@ Build and publish the docker container like this
 docker build -t noahzarro/anker-api:v2 .
 docker push noahzarro/anker-api:v2
 ```
-Select 
+Create new Container in Portainer and select correct docker image (`noahzarro/anker-api:v2`) and add a name (`anker-api`). Create the container and then add it to the `npm` network. Then add forwarding rule to the reverse proxy manager (`anker.uzwil-to-tokyo.ch` -> `anker-api:5000`) only for `http`. Then add a let's encrypt certificate and save.
