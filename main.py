@@ -1,12 +1,21 @@
 from enum import Enum
 from flask import Flask
+
+import os
 import json
 import requests
 import schedule
 import threading
 import time
+import jwt
 
 isTest = False
+
+if (isTest):
+    with open("private_key.pem", 'r') as file:
+        private_key_pem = file.read()
+else:
+    private_key_pem = os.environ["PRIVATE_KEY"].replace("\\n", "\n")
 
 if isTest:
     ankerDataURL = "https://raw.githubusercontent.com/noahzarro/anker-data/refs/heads/testing/data.json" 
@@ -40,11 +49,15 @@ def announcePromotion(payload, ankerData):
 
 def buildPromotionPayload(promotion, ankerData):
     (promotionType, promotionString) = checkPromotion(promotion, ankerData["matchingPattern"])
-    return {
+    data = {
         "hasPromotion": promotionType != Promotion.NONE,
         "isHalfPrice": promotionType == Promotion.HALF_PRICE,
-        "promotionString": promotionString
+        "promotionString": promotionString,
+        "checkedAt": int(time.time())
     }
+    signed_data = jwt.encode(data, private_key_pem, algorithm="ES512")
+    data.update({"signedData": signed_data})
+    return data
 
 def checkPromotion(promotion, matchingPattern):
     if promotion == None or promotion.get("text", None) == None:
@@ -90,6 +103,6 @@ def main():
     weeklyRoutine(withAnnouncement=False)
     schedule.every().monday.at("08:00", "Europe/Zurich").do(weeklyRoutine)
     threading.Thread(target=scheduler).start()
-    app.run(debug=True, port=5000, host='0.0.0.0', use_reloader=False)
+    app.run(debug=False, port=5000, host='0.0.0.0')
 
 main()
