@@ -23,6 +23,7 @@ If you URL is listed in the Webhooks data on [https://github.com/noahzarro/anker
 
 ### Signature
 The `signedData` contains a JWT, containing all data in the payload, except for (obviously) the signedData. Like this, the response is still human readable, but also secure from attacks from the [adversary](https://pascscha.ch/). He will attempt to send fake POST requests to the registered webhook clients.
+To prevent replay attacks, the receiver must check check that the checkedAt time stamp is strictly larger than the one of the last received webhook request. 
 
 The signature is calculated using the `ES512` algorithm. It can easily be checked with a JWT library. An example is provided below:
 
@@ -40,7 +41,16 @@ guTVasOeTvBnqMugZUH+SLDx0ZgraMjFE75kNQAHRZvA8inPoDPXJZ30onuYupkO
 -----END PUBLIC KEY-----
 """
 
+with open("timestamp.json", "r") as file:
+    last_timestamp = json.load(file)["timestamp"]
+
 decoded_data = jwt.decode(signed_data, public_key_pem, algorithms=["ES512"])
+
+if(decoded_data["checkedAt"] > last_timestamp):
+    print("payload is valid")
+    print(decoded_data)
+    with open("timestamp.json", "w") as file:
+        json.dump({"timestamp": decoded_data["checkedAt"]}, file)
 ```
 
 This code will throw a `jwt.exceptions.InvalidSignatureError` if the signature is incorrect.
