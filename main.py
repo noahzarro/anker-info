@@ -101,7 +101,7 @@ def offerPromotion():
 
 def main():
     weeklyRoutine(withAnnouncement=False)
-    schedule.every().monday.at("08:00", "Europe/Zurich").do(weeklyRoutine)
+    schedule.every().monday.at("12:00", "Europe/Zurich").do(weeklyRoutine)
     threading.Thread(target=scheduler).start()
     app.run(debug=False, port=5000, host='0.0.0.0')
 
