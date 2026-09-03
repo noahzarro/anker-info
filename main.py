@@ -8,8 +8,12 @@ import schedule
 import threading
 import time
 import jwt
+import sys
 
-isTest = False
+isTest = sys.argv.__contains__("--test")
+doRequest = sys.argv.__contains__("--doRequest")
+
+print(f"Running in {'test' if isTest else 'production'} mode, with{'out' if not doRequest else ''} request")
 
 if (isTest):
     with open("private_key.pem", 'r') as file:
@@ -27,11 +31,12 @@ class Promotion(Enum):
     NONE = "None"
     OTHER = "Anker Aktion, aber nöd halbe Priis"
 
-def weeklyRoutine(withAnnouncement=True):
-    print("Running weekly routine")
+def dailyRoutine(withAnnouncement=True):
+    print("Running daily routine")
     promotion = getPromotion()
     ankerData = getAnkerData()
     payload = buildPromotionPayload(promotion, ankerData)
+
     if withAnnouncement:
         announcePromotion(payload, ankerData)
     with open("payload.json", "w") as file:
@@ -72,11 +77,14 @@ def getAnkerData():
     return response.json()
 
 def getPromotion():
-    if isTest:
+    if not doRequest:
         with open("test_promotion.json", "r") as file:
             response = json.load(file)
     else:
         response = requests.get("https://www.coop.ch/rest/v2/coopathome/products/3458809").json()
+        with open("most_recent_promotion.json", "w") as file:
+            json.dump(response, file)
+
     return response.get("selectedPromotion", None)
 
 def scheduler():
@@ -100,9 +108,10 @@ def offerPromotion():
 
 
 def main():
-    weeklyRoutine(withAnnouncement=False)
-    schedule.every().monday.at("12:00", "Europe/Zurich").do(weeklyRoutine)
+    dailyRoutine(withAnnouncement=False)
+    schedule.every().day.at("12:00", "Europe/Zurich").do(dailyRoutine)
     threading.Thread(target=scheduler).start()
     app.run(debug=False, port=5000, host='0.0.0.0')
 
 main()
+
